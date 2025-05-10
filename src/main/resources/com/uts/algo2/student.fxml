@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uts.algo2.StudentController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   
+   <Label text="Sistem Manajemen Data Siswa" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+   
+   <HBox spacing="10.0" alignment="CENTER">
+      <Label text="NIM:" />
+      <TextField fx:id="fieldNim" promptText="Masukkan NIM siswa" />
+      <Label text="Nama:" />
+      <TextField fx:id="fieldNama" promptText="Masukkan nama siswa" />
+      <Label text="Nilai:" />
+      <TextField fx:id="fieldNilai" promptText="Masukkan nilai" />
+      <Button text="Tambah Siswa" onAction="#tambahSiswa" />
+   </HBox>
+   
+   <HBox spacing="10.0" alignment="CENTER">
+      <Label text="Cari berdasarkan Nama:" />
+      <TextField fx:id="fieldPencarian" promptText="Masukkan nama untuk mencari" HBox.hgrow="ALWAYS" />
+      <Button text="Cari" onAction="#cariSiswa" />
+      <Button text="Urutkan berdasarkan Nilai" onAction="#urutkanBerdasarkanNilai" />
+   </HBox>
+   
+   <Label fx:id="labelHasilPencarian" text="" style="-fx-text-fill: blue;"/>
+   
+   <TableView fx:id="tabelSiswa" VBox.vgrow="ALWAYS">
+      <columns>
+         <TableColumn fx:id="kolomNim" text="NIM" prefWidth="100" />
+         <TableColumn fx:id="kolomNama" text="Nama" prefWidth="200" />
+         <TableColumn fx:id="kolomNilai" text="Nilai" prefWidth="100" />
+      </columns>
+   </TableView>
+   
+   <HBox spacing="20.0" alignment="CENTER">
+      <Label fx:id="labelTotal" text="Total Nilai: 0.00" />
+      <Label fx:id="labelRataRata" text="Rata-rata Nilai: 0.00" />
+   </HBox>   
+</VBox>
